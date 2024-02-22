@@ -1,0 +1,3 @@
+FROM docker.{}
+ADD http://{}
+RUN cd config && unzip deployment.zip

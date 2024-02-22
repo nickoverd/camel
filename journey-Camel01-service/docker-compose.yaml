@@ -1,0 +1,18 @@
+version: '3.0'
+services:
+  journey:
+    build:
+      context: ./
+      dockerfile: Dockerfile-journey
+    environment:
+      - ARCHITECTURE=normal
+      - Backend_Path=example/NewExample/v01/transform
+    ports:
+      - "8080:8080"
+
+  backend:
+    build:
+      context: ./
+      dockerfile: Dockerfile-mocks
+    ports:
+      - "8090:80"
